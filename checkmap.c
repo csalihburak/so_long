@@ -6,7 +6,7 @@
 /*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:03:47 by scoskun           #+#    #+#             */
-/*   Updated: 2022/05/10 13:21:29 by scoskun          ###   ########.fr       */
+/*   Updated: 2023/05/02 20:19:14 by scoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,17 +122,17 @@ int	checkmap(t_list *main)
 
 	i = 0;
 	if (!checkarray(main))
-		return (0);
+		return (1);
 	if (!checkwalls(main))
-		return (0);
+		return (2);
 	if (!checksquare(main))
-		return (0);
+		return (3);
 	if (!checksides(main))
-		return (0);
+		return (4);
 	while (main->map[i])
 	{
 		if ((ft_strchr("ECP10", main->map[i]) && main->map[i] != '\n'))
-			return (0);
+			return (5);
 		i++;
 	}
 	return (1);

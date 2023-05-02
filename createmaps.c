@@ -6,7 +6,7 @@
 /*   By: scoskun <scoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:03:57 by scoskun           #+#    #+#             */
-/*   Updated: 2022/04/27 14:22:05 by scoskun          ###   ########.fr       */
+/*   Updated: 2023/05/02 20:19:42 by scoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,9 @@ int	createmap(t_list *main, char *file)
 	if (main->fd < 0)
 		return (0);
 	main->map = ft_read(main->fd, main->map);
-	if (!(checkmap(main)))
+	int res = checkmap(main);
+	printf("%d\n", res);
+	if (res != 1)
 	{
 		free(main->map);
 		return (0);
